@@ -2,7 +2,7 @@
 
 ## Overview
 - Our spring project is a simple, stripped-down version of a forum site.
-- Our easter egg will be a web-version of our old semi-completed Doodle Jump JFame app
+- Our easter egg will be a web version of our old, semi-completed Doodle Jump JFame app
 
 ## Contributors
 Contributor | GitHub Link |
