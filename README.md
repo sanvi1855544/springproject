@@ -4,6 +4,10 @@
 - Our spring project is a simple, stripped-down version of a forum site.
 - Our easter egg will be a web version of our old, semi-completed Doodle Jump JFame app
 
+## Runtime Guidelines
+- Pull from the main branch
+- Run main method in src/main/java/com/example/lobosspring/LobosSpringApplication.java
+
 ## Contributors
 Contributor | GitHub Link |
 ----------- | ----------- |
