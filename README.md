@@ -7,6 +7,7 @@
 ## Runtime Guidelines
 - Pull from the main branch
 - Run main method in src/main/java/com/example/lobosspring/LobosSpringApplication.java
+- Go to localhost:8080
 
 ## Contributors
 Contributor | GitHub Link |
