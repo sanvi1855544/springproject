@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<script>
+	function post(){
+		const txtarea = document.querySelector("#TextBox");
+		txtarea.value = "";
+	}
+</script>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Forum - TextBox Demo</title>
+	</head>
+	<body style="background-color:#181726">
+		<h1 style="color:white">Post Questions/Answers Here</h1>
+		<textarea id="TextBox" style ="width:400px"></textarea>
+		<br>
+		<button onclick='post()' style="color:gray">Post</button>
+	</body>
+</html>
