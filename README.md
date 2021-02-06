@@ -18,7 +18,7 @@
 
 Date | Changes |
 ----------- | ----------- |
-2/5 | - [[DONE] Website pushed to internet @Dominic](https://github.com/sanvi1855544/springproject/issues/6) <br> - [[WIP] Set up demo users database using JPA @Dominic](https://github.com/sanvi1855544/springproject/issues/1)
+2/5 | - [[DONE] Easter Egg initial site commit @Sean](https://github.com/sanvi1855544/springproject/issues/7) <br> - [[WIP] Integrate Swing easter egg into browser](https://github.com/sanvi1855544/springproject/issues/3) <br> - [[DONE] Website pushed to internet @Dominic](https://github.com/sanvi1855544/springproject/issues/6) <br> - [[WIP] Set up demo users database using JPA @Dominic](https://github.com/sanvi1855544/springproject/issues/1)
 
 ## Contributors
 Contributor | GitHub Link |
