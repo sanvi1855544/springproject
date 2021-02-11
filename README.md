@@ -1,4 +1,4 @@
-# p1lobos | Spring Project: Forum Site
+# p1lobos | Spring Project: Forum Site -
 
 ## Important Links
 - [Website Link](https://apcsa-lobos-spring.azurewebsites.net)
