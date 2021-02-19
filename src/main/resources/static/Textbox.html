@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body style="background-color:#181726">
+    <h1 style="color:white">Post Questions/Answers Here</h1>
+    <div id = "postdiv">
+    <p id="postarea" style = "color:gray">This is the beginning of your post</p>
+    </div>
+    <textarea id="TextBox" style ="width:400px"></textarea>
+    <br>
+    <button onclick='post()' style="color:gray">Post</button>
+
+    <script>
+        var posts = 1;
+        var para = document.createElement("p");
+        var node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        var element = document.getElementById("postdiv");
+        element.appendChild(para);
+
+    function post(){
+        const txtarea = document.getElementById("TextBox");
+        var para = document.createElement("p");
+        var node = document.createTextNode(txtarea.value);
+        para.appendChild(node);
+        var element = document.getElementById("postdiv");
+        element.appendChild(para);
+        var button = document.createElement("button");
+        button.innerHTML = "Delete";
+        element.appendChild(button);
+        button.onclick = function(){ para.remove();
+        button.remove();
+        button1.remove();
+
+        };
+
+        var button1 = document.createElement("button");
+        button1.innerHTML = "Reply";
+        element.appendChild(button1);
+        //document.getElementById("postarea").innerHTML = document.getElementById("postarea").innerHTML+ "<br>" + txtarea.value ;
+        txtarea.value = "";
+
+    }
+
+</script>
+</body>
+</html>
+
