@@ -1,10 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<meta charset="UTF-8">
 		<title>Doodle Jump Prototype</title>
+
+		<style type="text/css">
+			canvas { border: 5px solid black; }
+		</style>
+
+		<script>
+
+			// all js script will eventually be in their own directory, not directly in doodlejump.html
+
+			//initial parameters for the player
+			var x = 500/2 - 12.5;
+			var y = 600 - 50;
+
+			var xVelocity = 0;
+			var yVelocity = -40;
+			var yAccel = 3
+
+			function init() {
+
+				//initializes canvas
+				var canvas = document.getElementById('game window');
+
+				if (canvas.getContext) {
+
+					var ctx = canvas.getContext('2d');
+
+					requestAnimationFrame(draw)
+				}
+			}
+
+			function draw() {
+				var ctx = document.getElementById('game window').getContext('2d');
+
+				ctx.globalCompositeOperation = 'destination-over';
+				ctx.clearRect(0, 0, 500, 600); // clear canvas
+
+
+				//updates parameters given enviroment
+				x += xVelocity;
+				y += yVelocity;
+				yVelocity += yAccel;
+
+				if (y >= 570){
+					yVelocity = -40;
+				}
+				//draws player
+				ctx.fillStyle = 'rgb(22, 139, 3)';
+				ctx.fillRect(x, y, 25, 25 );
+
+
+				requestAnimationFrame(draw);
+			}
+		</script>
+
 	</head>
-	<body>
-		<img src="dj.jpg"></img>
+
+	<body onload="init()">
+
+		<canvas id="game window" width="500" height="600">
+			<img src="dj.jpg">
+		</canvas>
+
 	</body>
 </html>
