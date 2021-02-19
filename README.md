@@ -13,13 +13,13 @@
 - Visit localhost:8080 in your browser
 
 ## Changelog (Ticket items)
-- For items labeled [WIP], click on the ticket to get more information on what was accomplished on that date.
-- Links to code links and runtime evidence are found in the tickets.
+- Some items/changes refer to the same ticket if multiple weeks' worth of progress is for one feature/component (in this case, the ticket should clarify what work was done each week)
+- Links to code and runtime evidence are found in the tickets.
 
 Date | Changes |
 ----------- | ----------- |
-2/5 | - [[DONE] Easter Egg initial site commit @Sean](https://github.com/sanvi1855544/springproject/issues/7) <br> - [[WIP] Integrate Swing easter egg into browser @Sean](https://github.com/sanvi1855544/springproject/issues/3) <br> - [[DONE] Website pushed to internet @Dominic](https://github.com/sanvi1855544/springproject/issues/6) <br> - [[WIP] Set up demo users database using JPA @Dominic](https://github.com/sanvi1855544/springproject/issues/1) <br> - [[DONE] Created page for upvoting and inserting upvoting icon @Sanvi](https://apcsa-lobos-spring.azurewebsites.net/upvote.html) <br> - [[WIP] Add button functionality to upvoting and create algo that sorts posts @Sanvi- <br> -[[Done] Posting, textbox and button are done @Jason]
-2/18 | - [[Done] Delete button now works. @Jason] <br> - [[Done] Add basic animation to easter egg game @Sean](https://github.com/sanvi1855544/springproject/issues/8)
+2/18 | - [[Done] Delete button now works. @Jason](https://github.com/sanvi1855544/springproject/issues/2) <br> - [[Done] Add basic animation to easter egg game @Sean](https://github.com/sanvi1855544/springproject/issues/8)
+2/5 | - [[Done] Easter Egg initial site commit @Sean](https://github.com/sanvi1855544/springproject/issues/7) <br> - [[WIP] Integrate Swing easter egg into browser @Sean](https://github.com/sanvi1855544/springproject/issues/3) <br> - [[Done] Website pushed to internet @Dominic](https://github.com/sanvi1855544/springproject/issues/6) <br> - [[WIP] Set up demo users database using JPA @Dominic](https://github.com/sanvi1855544/springproject/issues/1) <br> - [[Done] Created page for upvoting and inserting upvoting icon @Sanvi](https://apcsa-lobos-spring.azurewebsites.net/upvote.html) <br> - [WIP] Add button functionality to upvoting and create algo that sorts posts @Sanvi <br> - [[Done] Posting, textbox and button are done @Jason](https://github.com/sanvi1855544/springproject/issues/2)
 
 ## Contributors
 Contributor | GitHub Link |
@@ -28,3 +28,6 @@ Dominic Phung | [@domph](https://github.com/domph) |
 Sanvi Pal | [@sanvi1855544](https://github.com/sanvi1855544) |
 Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |
 Sean Rollins | [@banditcat12](https://github.com/banditcat12) |
+
+## Open-Source Code Used
+- Website uses modified version of [Bootstrap 4 Login Page](https://github.com/nauvalazhar/bootstrap-4-login-page)

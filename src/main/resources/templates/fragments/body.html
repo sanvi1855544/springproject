@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org">
+	<body>
+		<!-- Navbar -->
+		<div th:fragment="navbar" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+			<h5 class="my-0 mr-md-auto font-weight-normal">
+				<a href="./" style="text-decoration: none">AP CSA | Lobos</a>
+			</h5>
+			<nav class="my-2 my-md-0 mr-md-3">
+				<a class="p-2 text-dark" href="/textbox">Textbox Demo</a>
+				<a class="p-2 text-dark" href="/upvote">Upvote Demo</a>
+				<a class="p-2 text-dark" href="/doodlejump">Doodle Jump Easter Egg</a>
+			</nav>
+			<nav>
+				<a class="btn btn-outline-success" href="/login">Login</a>
+				<a class="btn btn-outline-primary" href="/register">Register</a>
+			</nav>
+		</div>
+
+		<!-- Scripts -->
+		<th:block th:fragment="scripts">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script src="js/bootstrap.js"></script>
+		</th:block>
+	</body>
+</html>
+

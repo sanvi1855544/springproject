@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
 	<head>
-
-		<meta charset="UTF-8">
-		<title>Doodle Jump Prototype</title>
+		<div th:replace="fragments/header :: head"></div>
+		<title>Lobos | Doodle Jump</title>
 
 		<style type="text/css">
 			canvas { border: 5px solid black; }
@@ -57,14 +56,22 @@
 				requestAnimationFrame(draw);
 			}
 		</script>
-
 	</head>
-
 	<body onload="init()">
+		<!-- Navbar -->
+		<div th:replace="fragments/body :: navbar"></div>
+
+		<div class="header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<h1 class="display-4">Doodle Jump Easter Egg</h1>
+			<br>
+			<p class="lead">WIP demo of our easter egg: a ported version of our Swing Doodle Jump project.</p>
+		</div>
 
 		<canvas id="game window" width="500" height="600">
 			<img src="dj.jpg">
 		</canvas>
 
+		<!-- Bootstrap & JQuery JS -->
+		<div th:replace="fragments/body :: scripts"></div>
 	</body>
 </html>

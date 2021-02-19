@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+	<head>
+		<div th:replace="fragments/header :: head"></div>
+		<title>AP CSA | Lobos</title>
+	</head>
+	<body>
+		<!-- Navbar -->
+		<div th:replace="fragments/body :: navbar"></div>
+
+		<div class="header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<h1 class="display-4">Hey! :)</h1>
+			<br>
+			<p class="lead">Thanks for checking out our Spring project. It's still under construction, but feel free to navigate to the various tabs in the navbar to check out our progress! Our goal is to make a forum-like web service.</p>
+		</div>
+
+		<!-- Bootstrap & JQuery JS -->
+		<div th:replace="fragments/body :: scripts"></div>
+	</body>
+</html>
