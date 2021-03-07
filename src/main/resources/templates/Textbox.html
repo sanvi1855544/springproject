@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    .centered{
+        margin: 0;
+        left: 50%;
+        transform: translateX(37.5%);
+    }
+
+
+
+
+</style>
+<body style="background-color:#181726">
+<h1 style="color:white;text-align:center;">Post Questions/Answers Here</h1>
+<div id = "postdiv" class = "centered" >
+    <p id="0" style = "color:gray;">This is the beginning of your post</p>
+    <textarea id="TextBox" style ="width:400px;" ></textarea>
+    <br>
+    <button onclick='post()' style="color:gray;">Post</button>
+</div>
+    <!--
+    <div id = "postdiv" >
+    <p id="postarea" style = "color:gray;">This is the beginning of your post</p>
+    </div>
+    <textarea id="TextBox" style ="width:400px;" ></textarea>
+    <br>
+    <button onclick='post()' style="color:gray;">Post</button>
+       -->
+    <script >
+        var element = document.getElementById("postdiv");
+        element.appendChild(para);
+        var posts = 0;
+
+    function post(var1){
+        alert(posts);
+        const txtarea = document.getElementById("TextBox");
+        const para = document.createElement("p");
+        const node = document.createTextNode(txtarea.value);
+        para.appendChild(node);
+        var element = document.getElementById(posts);
+        element.style.color = "gray";
+        element.appendChild(para);
+        const button = document.createElement("button");
+        button.innerHTML = "Delete";
+        element.appendChild(button);
+
+        button.onclick = function()
+        {
+            para.remove();
+            button.remove();
+            button1.remove();
+        };
+
+        const button1 = document.createElement("button");
+        button1.innerHTML = "Reply";
+        element.appendChild(button1);
+        button1.onclick = function(){
+            button1.remove();
+            const textbox = document.createElement("textarea");
+            para.appendChild(textbox);
+            const postreply = document.createElement("button");
+            postreply.innerHTML = "Post Reply";
+            postreply.onclick = function(){
+                var indent = '\xa0 \xa0 \xa0 \xa0';
+                const replypara = document.createElement("p");
+                const reply = indent.concat(textbox.value);
+                const rnode = document.createTextNode(reply);
+                replypara.appendChild(rnode);
+                para.appendChild(replypara);
+                button1.innerHTML = "Reply";
+                element.appendChild(button1);
+                textbox.remove();
+                postreply.remove();
+                post();
+        }
+        para.appendChild(postreply);
+
+
+        };
+        //document.getElementById("postarea").innerHTML = document.getElementById("postarea").innerHTML+ "<br>" + txtarea.value ;
+        txtarea.value = "";
+        posts = posts + 1
+
+    }
+
+</script>
+</body>
+</html>
+
