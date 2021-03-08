@@ -70,7 +70,10 @@ class GameObject extends GraphicsElement{
     updatePhysics(timeDelta){
         this.setVelocity(this.velX + (this.accelX * timeDelta), this.velY + (this.accelY * timeDelta))
         //todo make bullet immune from screen wrapping
-        this.setPosition(((500 + this.getposX) % 500) + this.velX * timeDelta , this.getposY + this.velY * timeDelta)
+        if(this.accelY!=0){
+            this.setPosition(((500 + this.getposX) % 500) + this.velX * timeDelta , this.getposY + this.velY * timeDelta)
+        }
+        else {this.setPosition(this.getposX + this.velX * timeDelta , this.getposY + this.velY * timeDelta)}
     }
 
 
@@ -118,8 +121,6 @@ class Bullet extends GameObject{
 
 
 
-let isRunning = false;
-
 let player;
 let bullet;
 let monsters;
@@ -129,7 +130,7 @@ let leftKeyDown = false;
 let rightKeyDown = false;
 
 let BULLET_SPEED = 400;
-let canShoot = false;
+let canShoot = true;
 let dx = 0;
 let dy = 0;
 
@@ -146,21 +147,21 @@ function init() {
         //puts objects in initial position
         player  = new Player(250, 200)
         bullet = []
-        monsters = [new Monster(50,400), new Monster(50,100)]
+        monsters = [new Monster(50,200), new Monster(50,400),new Monster(400,300),0]
         platforms = [new Platform(400,400), new Platform(400,200), new Platform(250,500), new Platform(100,300)]
 
         //adds button and mouse event listeners
         canvas.addEventListener('click', function(event) {
+            if (canShoot){
+                lastDownTarget = event.target;
 
-            lastDownTarget = event.target;
+                canShoot = false;
 
-            canShoot = false;
+                dx = -(canvas.getBoundingClientRect().x - (event.clientX - player.getposX));
+                dy = -(canvas.getBoundingClientRect().y - (event.clientY - player.getposY));
 
-            dx = -(canvas.getBoundingClientRect().x - (event.clientX - player.getposX));
-            dy = -(canvas.getBoundingClientRect().y - (event.clientY - player.getposY));
-
-            bullet[0] = new Bullet(player.getposX, player.getposY);
-            bullet[0].setVelocity(BULLET_SPEED * dx / Math.hypot(dx, dy),  BULLET_SPEED * dy / Math.hypot(dx, dy));
+                bullet[0] = new Bullet(player.getposX, player.getposY);
+                bullet[0].setVelocity(BULLET_SPEED * dx / Math.hypot(dx, dy),  BULLET_SPEED * dy / Math.hypot(dx, dy));}
 
         }
             , false);
@@ -198,28 +199,34 @@ function newState(){
 
 
     //checks monster collision with player and bullet
-    for(i = 0; i < monsters.length; i++){
+    m = monsters;
+    for(i = 0; i < m.length; i++){
 
         //player
-        if (player.getposX + player.sizeX >= monsters[i].getposX && player.getposX <= monsters[i].getposX + monsters[i].sizeX &&
-            player.getposY + player.sizeY >= monsters[i].getposY && player.getposY <= monsters[i].getposY + monsters[i].getsizeY) {
-
+        if (player.getposX + player.sizeX > m[i].getposX && player.getposX < m[i].getposX + m[i].sizeX &&
+            player.getposY + player.sizeY > m[i].getposY && player.getposY < m[i].getposY + m[i].getsizeY) {
             //if jumping on, monster dies, acts as a platform
             if (player.getvelY >=0) {
-                monsters.splice(i, 1);
+                monsters[i] = 0;
                 player.setVelocity(player.getvelX, -324);
-            }
+          }
 
             //if jumping into, game over
-            else if (player.getvelY  <= 0){
+            else {if (player.getvelY  <= 0){
+                alert("jumped into")
                 gameOver();
-            }
+            }}
         }
 
         //bullet
-        if (bullet[0] && bullet[0].getposX + bullet[0].sizeX >= monsters[i].getposX && bullet[0].getposX <= monsters[i].getposX + monsters[i].sizeX &&
-            bullet[0].getposY + bullet[0].sizeY >= monsters[i].getposY && bullet.getposY <= monsters[i].getposY + monsters[i].getsizeY){
-            monsters.splice(i, 1);
+        if(bullet[0] && Math.abs(250 - bullet[0].getposX) >= 250){
+            bullet[0] = 0;
+            canShoot = true;
+        }
+        if (bullet[0] &&
+            bullet[0].getposX + bullet[0].sizeX > m[i].getposX && bullet[0].getposX < m[i].getposX + m[i].sizeX &&
+            bullet[0].getposY + bullet[0].sizeY > m[i].getposY  && bullet[0].getposY < m[i].getposY + m[i].getsizeY){
+            monsters[i] = 0;
         }
     }
 
@@ -290,9 +297,9 @@ function draw() {
         if (bullet[0]){drawObject(bullet[0]); //alert(`drew bullet at ${bullet[0].getposX}, ${bullet[0].getposY}`);
             }
 
-        for (let i = 0; i < monsters.length; i++) {
+        if(monsters){for (let i = 0; i < monsters.length; i++) {
             drawObject(monsters[i]);
-        }
+        }}
 
         for (let i = 0; i < platforms.length; i++) {
            drawObject(platforms[i]);
