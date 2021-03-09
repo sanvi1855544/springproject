@@ -92,7 +92,7 @@ public class UserController {
 				Map<Long, String> CurrentPosts = CurrentUser.getPosts();
 				CurrentPosts.put(Instant.now().getEpochSecond(), data);
 
-				userService.save(CurrentUser);
+				userService.saveBypassPasswordRewrite(CurrentUser);
 			}
 		}
 
@@ -109,7 +109,7 @@ public class UserController {
 			if (CurrentUser != null) {
 				Map<Long, String> CurrentPosts = CurrentUser.getPosts();
 				CurrentPosts.remove(PostTimestamp);
-				userService.save(CurrentUser);
+				userService.saveBypassPasswordRewrite(CurrentUser);
 			}
 		}
 

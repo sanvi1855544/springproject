@@ -6,4 +6,5 @@ public interface UserService {
 	void save(User user);
 	User findByUsername(String username);
 	Iterable<User> getUsers();
+	void saveBypassPasswordRewrite(User user);
 }

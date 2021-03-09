@@ -35,4 +35,9 @@ public class UserServiceImpl implements UserService {
 	public Iterable<User> getUsers() {
 		return userRepository.findAll();
 	}
+
+	@Override
+	public void saveBypassPasswordRewrite(User user) {
+		userRepository.save(user);
+	}
 }
