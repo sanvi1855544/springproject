@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org/">
 	<head>
 		<div th:replace="fragments/header :: head"></div>
 		<title>Doodle Jump</title>
 
 		<style type="text/css">
-			canvas { border: 5px solid black; }
+			canvas {
+				border: 5px solid black;
+				padding-left: 0;
+				padding-right: 0;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+			}
 		</style>
 
-		<script src = "js/dj/main.js"></script>
+		<script src = "js/doodlejump.js"></script>
 	</head>
 	<body onload="init()">
 		<!-- Navbar -->
 		<div th:replace="fragments/body :: navbar"></div>
 
 		<div class="header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-			<h1 class="display-4">Doodle Jump Easter Egg</h1>
+			<h1 class="display-4">Doodle Jump Game</h1>
 			<br>
-			<p class="lead">demo of our easter egg: a ported version of our WIP Swing project.</p>
-			<p class="lead"> use the left and right arrow keys to move. left click to shoot using the mouse to aim.</p>
+			<p class="lead">Game Easter Egg: This is a web ported version of our Swing project.</p>
+			<p class="lead">Use the left and right arrow keys to move. Left click to shoot at monsters, and use the mouse to aim. You can also jump on monsters to kill them. If you collide with them any other way, however, you'll die (refresh the page to restart).</p>
 		</div>
 
 

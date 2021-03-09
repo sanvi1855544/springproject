@@ -15,9 +15,9 @@ public class TemplateController {
 		return "textbox";
 	}
 
-	@RequestMapping("/upvote")
+	@RequestMapping("/runningblock")
 	public String Upvote(){
-		return "upvote";
+		return "runningblock";
 	}
 
 	@RequestMapping("/login")

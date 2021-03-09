@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org/" onclick="jump()">
+	<head>
+		<div th:replace="fragments/header :: head"></div>
+		<title>Easter Egg Game</title>
+
+		<link rel="stylesheet" href="css/runningblock.css">
+	</head>
+	<body>
+		<!-- Navbar -->
+		<div th:replace="fragments/body :: navbar"></div>
+
+		<div class="header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<h1 class="display-4">Running Block Game</h1>
+			<br>
+			<p class="lead">Game Easter Egg: This is a block-version of the Google Chrome running dinosaur game (the one you see when you don't have an internet connection).</p>
+			<p class="lead">Click anywhere on the page to jump and avoid the incoming blocks!</p>
+		</div>
+
+		<div class="game">
+			<div id="character"></div>
+			<div id="block"></div>
+		</div>
+		<p>Score: <span id="scoreSpan"></span></p>
+
+		<!-- Bootstrap & JQuery JS -->
+		<div th:replace="fragments/body :: scripts"></div>
+	</body>
+	<script src="js/runningblock.js"></script>
+</html>
