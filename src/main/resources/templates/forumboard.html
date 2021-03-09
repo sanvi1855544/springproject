@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<div th:replace="fragments/header :: head"></div>
+		<title>Lobos | Forum Board</title>
+	</head>
+	<body>
+		<!-- Navbar -->
+		<div th:replace="fragments/body :: navbar"></div>
+
+		<div class="header px-3 py-3 pt-md-3 pb-md-4 mx-auto text-center">
+			<h1 class="display-4">Forum Board</h1>
+			<br>
+			<p th:if="${#request.userPrincipal != null}" class="lead">A board where you can view and post text that will persist for others to see!</p>
+			<p th:if="${#request.userPrincipal == null}" class="lead text-secondary">A board where you can view and post text that will persist for others to see! You must be <a href="/login">logged in</a> to post.</p>
+			<hr>
+		</div>
+
+		<form th:if="${#request.userPrincipal != null}" method="POST" th:action="@{/forumboard}">
+			<div class="form-group w-75" style="padding-left:0;padding-right:0;margin-left:auto;margin-right:auto;display:block;">
+				<label for="newpost" class="lead">New post:</label>
+				<textarea type="text" th:name="data" class="form-control" id="newpost" name="data" rows="3"></textarea>
+				<div th:if="${message}" th:text="${message}" class="text-primary"></div>
+				<br>
+				<button type="submit" class="btn btn-primary mb-2">Submit Post</button>
+			</div>
+		</form>
+
+		<div th:if="${#request.userPrincipal != null}" class="header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<hr>
+		</div>
+
+		<div class="form-group w-75" style="padding-left:0;padding-right:0;margin-left:auto;margin-right:auto;display:block;">
+			<label class="lead">Board:</label>
+		</div>
+		<div th:if="${#lists.isEmpty(posts)}">
+			<div class="header px-3 py-3 pt-md-3 pb-md-4 mx-auto text-center">
+				<p class="lead">It looks like there aren't any posts yet! Be the first to post!</p>
+			</div>
+		</div>
+		<div th:each="post : ${posts}">
+			<div class="card w-75" style="padding-left:0;padding-right:0;margin-left:auto;margin-right:auto;display:block;">
+				<h5 th:text="${post.username}" class="card-header"></h5>
+				<div class="card-body">
+					<p th:text="${post.postData}" class="card-text"></p>
+					<footer th:text="${post.date}" class="blockquote-footer"></footer>
+				</div>
+			</div>
+			<br>
+		</div>
+
+		<br>
+		<br>
+
+		<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<p class="lead">Click <a href="/experimental">here</a> to access the experimental testing page for our forum board (contains stuff we're testing, like adding a reply feature)!</p>
+		</div>
+
+		<!-- Bootstrap & JQuery JS -->
+		<div th:replace="fragments/body :: scripts"></div>
+	</body>
+</html>

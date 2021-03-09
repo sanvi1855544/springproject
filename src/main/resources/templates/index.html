@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org/">
 	<head>
 		<div th:replace="fragments/header :: head"></div>
-		<title>AP CSA | Lobos</title>
+		<title>Lobos | Home</title>
 	</head>
 	<body>
 		<!-- Navbar -->
@@ -10,8 +10,47 @@
 
 		<div class="header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 			<h1 class="display-4">Hey! :)</h1>
+			<hr>
 			<br>
-			<p class="lead">Thanks for checking out our Spring project. It's still under construction, but feel free to navigate to the various tabs in the navbar to check out our progress! Our goal is to make a forum-like web service.</p>
+			<p class="lead">Welcome to the Lobos group's AP CSA project. Check out our work through the header tab or the cards below!</p>
+		</div>
+
+		<div class="container">
+			<div class="card-deck mb-3 text-center">
+				<div class="card mb-4 box-shadow">
+					<div class="card-header">
+						<h4 class="my-0 font-weight-normal">Forum Board</h4>
+					</div>
+					<div class="card-body d-flex flex-column">
+						<label>A simplistic version of a forum / page-posting board where you can make posts, which are saved under your name and the time/date you made the post. You must be logged in to make a post.</label>
+						<br>
+						<a class="mt-auto btn btn-lg btn-block btn-outline-primary" href="/forumboard">Visit</a>
+
+						<br>
+						<label>Also check out our experimental page for new features to our forum board we're working on, like replying!</label>
+						<br>
+						<a class="mt-auto btn btn-lg btn-block btn-outline-success" href="/experimental">Experimental Page</a>
+					</div>
+				</div>
+				<div class="card mb-4 box-shadow">
+					<div class="card-header">
+						<h4 class="my-0 font-weight-normal">Doodle Jump</h4>
+					</div>
+					<div class="card-body d-flex flex-column">
+						<label>A web-ported version of our previous project, a Java Swing-based Doodle Jump remake.</label>
+						<a class="mt-auto btn btn-lg btn-block btn-outline-primary" href="/doodlejump">Play</a>
+					</div>
+				</div>
+				<div class="card mb-4 box-shadow">
+					<div class="card-header">
+						<h4 class="my-0 font-weight-normal">Running Block</h4>
+					</div>
+					<div class="card-body d-flex flex-column">
+						<label>A block-based remake of the infamous Google Chrome dinosaur game you get when you've lost your internet connection.</label>
+						<a class="mt-auto btn btn-lg btn-block btn-outline-primary">Play</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Bootstrap & JQuery JS -->
