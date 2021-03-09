@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<div th:replace="fragments/header :: head"></div>
+		<title>Lobos | Home</title>
+	</head>
+	<body>
+		<!-- Navbar -->
+		<div th:replace="fragments/body :: navbar"></div>
+
+		<label th:if="${data}" th:text="${data}"></label>
+
+
+		<!-- Bootstrap & JQuery JS -->
+		<div th:replace="fragments/body :: scripts"></div>
+	</body>
+</html>

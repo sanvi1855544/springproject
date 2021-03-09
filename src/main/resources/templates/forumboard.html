@@ -43,7 +43,9 @@
 				<h5 th:text="${post.username}" class="card-header"></h5>
 				<div class="card-body">
 					<p th:text="${post.postData}" class="card-text"></p>
-					<footer th:text="${post.date}" class="blockquote-footer"></footer>
+
+					<form th:id="'deletePost' + ${post.unixTimestamp}" method="POST" th:action="@{/deletepost/__${post.unixTimestamp}__}"></form>
+					<footer th:inline="text" class="blockquote-footer">[[${post.date}]]<a th:if="${#request.userPrincipal.name == post.username}" class="btn btn-outline-danger" style="margin-left: 10px;" th:onclick="'document.forms[\'deletePost' +${post.unixTimestamp} + '\'].submit()'">Delete</a></footer>
 				</div>
 			</div>
 			<br>
