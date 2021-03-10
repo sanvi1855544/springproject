@@ -21,6 +21,8 @@
   - [index.html](https://github.com/sanvi1855544/springproject/blob/main/src/main/resources/templates/index.html): The bulk of the landing page
   - Thymeleaf fragments: [body.html](https://github.com/sanvi1855544/springproject/blob/main/src/main/resources/templates/fragments/body.html), [header.html](https://github.com/sanvi1855544/springproject/blob/main/src/main/resources/templates/fragments/header.html) — incorporated in all pages
 
+<img src="https://rtx.azurewebsites.net/bf60ec71b76c8edaed8d08cc2c642d92.png" width="500"/>
+
 ### Login/Register/Logout Functionality
 - Overview:
   - Allows clients to login and register with a unique username and password
@@ -40,6 +42,8 @@
 - Relevant runtime links:
   - [Login page](https://apcsa-lobos-spring.azurewebsites.net/login), [Register page](https://apcsa-lobos-spring.azurewebsites.net/register)
 
+<img src="https://rtx.azurewebsites.net/df01c58cd34c984b37ba292d21d3ec5b.png" width="500"/>
+
 ### [Forum Board](https://apcsa-lobos-spring.azurewebsites.net/forumboard)
 - Overview:
   - Clients can view posts made by others and make their own if they are logged in
@@ -53,6 +57,8 @@
 - Relevant code:
   - [UserController.java](https://github.com/sanvi1855544/springproject/blob/main/src/main/java/com/example/lobosspring/web/UserController.java): Consists of all the GET/POST mappings and the logic behind how posts are saved and shown
   - [forumboard.html](https://github.com/sanvi1855544/springproject/blob/main/src/main/resources/templates/forumboard.html): Contains a lot of embedded thymeleaf statements
+
+<img src="https://rtx.azurewebsites.net/64c41fec9aa2d96df65a2f2ab84e89d7.png" width="500"/>
 
 ### [Doodle Jump Game / Easter Egg](https://apcsa-lobos-spring.azurewebsites.net/doodlejump)
 - Overview:
@@ -68,6 +74,8 @@
   - [doodlejump.js](https://github.com/sanvi1855544/springproject/blob/main/src/main/resources/static/js/doodlejump.js): Bulk of the game code
   - [doodlejump.html](https://github.com/sanvi1855544/springproject/blob/main/src/main/resources/templates/doodlejump.html)
 
+<img src="https://rtx.azurewebsites.net/2f4b204bccfc03254b594a6e0a089ec0.png" width="500"/>
+
 ### [Running Block Game / Easter Egg](https://apcsa-lobos-spring.azurewebsites.net/runningblock)
 - Overview:
   - A block-based rendition of the Google Chrome offline-mode dinosaur game
@@ -77,6 +85,8 @@
 - Relevant code:
   - [runningblock.js](https://github.com/sanvi1855544/springproject/blob/main/src/main/resources/static/js/runningblock.js): Bulk of the game code
   - [runningblock.html](https://github.com/sanvi1855544/springproject/blob/main/src/main/resources/templates/runningblock.html)
+
+<img src="https://rtx.azurewebsites.net/37e5d28b71f999db00cd9a631a746b45.png" width="500"/>
 
 ## Runtime Guidelines
 - Pull from the main branch
