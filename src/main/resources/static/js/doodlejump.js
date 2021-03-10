@@ -212,8 +212,7 @@ function newState(){
           }
 
             //if jumping into, game over
-            else {if (player.getvelY  <= 0){
-                alert("jumped into")
+            else {if (player.getvelY  <= 0){              
                 gameOver();
             }}
         }
@@ -269,7 +268,7 @@ function newState(){
 //code if one dies
 function gameOver(){
     isRunning = false;
-    alert("you died");
+    alert("You Died! Refresh the page to pllay again.");
 }
 
 
