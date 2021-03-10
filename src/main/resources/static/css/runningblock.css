@@ -26,16 +26,19 @@
     100%{top: 150px;}
 }
 
-#block{
+#block {
     background-color: lightseagreen;
     width: 20px;
     height: 20px;
     position: relative;
     top: 130px;
     left: 500px;
-    animation: block 1s infinite linear;
 }
-@keyframes block{
+
+.blockanimate {
+    animation: blockmove 1s infinite linear;
+}
+@keyframes blockmove {
     0%{left: 500px}
     100%{left: -20px}
 }
