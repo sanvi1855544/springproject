@@ -1,4 +1,4 @@
-# p1lobos | Spring Project: Forum Site
+# p1lobos | Spring Project: Forum Board & Easter Egg Games
 
 ## Important Links
 - [Website Link](https://apcsa-lobos-spring.azurewebsites.net) — hosted on [Microsoft Azure](https://azure.microsoft.com/en-us/)
